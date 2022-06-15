@@ -12,7 +12,7 @@ keywords = ["wasm", "web", "bulma", "sass", "yew"]
 
 [dependencies]
 derive_more = { version="0.99.9", default-features=false, features=["display"] }
-web-sys = { version="0.3", features=["Element", "File", "HtmlCollection", "HtmlSelectElement"] }
+web-sys = { version="0.3.58", features=["Element", "File", "HtmlCollection", "HtmlSelectElement"] }
 yew = "0.19"
 yew-agent = "0.1"
 yew-router = { version="0.16", optional=true }
