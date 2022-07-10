@@ -33,11 +33,11 @@ impl Component for App {
   fn view(&self) -> Html {
     html!{
       <>
-      <ybc::Navbar fixed=Top /* .. your navbar content here .. *//>
+      <ybc::Navbar fixed={Top} /* .. your navbar content here .. *//>
       <ybc::Container fluid=true>
-        <ybc::Tile ctx=Ancestor>
-          <ybc::Tile ctx=Parent vertical=true size=Four>
-            <ybc::Tile ctx=Child classes=classes!("box")>
+        <ybc::Tile ctx={Ancestor}>
+          <ybc::Tile ctx={Parent} vertical=true size={Four}>
+            <ybc::Tile ctx={Child} classes=classes!("box")>
               <p>{"Lorem ipsum dolor sit amet ..."}</p>
             </ybc::Tile>
             /* .. snip .. more tiles here .. */

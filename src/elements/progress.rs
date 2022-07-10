@@ -8,8 +8,8 @@ pub struct ProgressProps {
     #[prop_or_else(|| 1.0)]
     pub max: f32,
     /// The amount of progress which has been made.
-    #[prop_or_else(|| 0.0)]
-    pub value: f32,
+    //#[prop_or_default]
+    pub value: Option<f32>,
 }
 
 /// A native HTML progress bar.
@@ -19,11 +19,14 @@ pub struct ProgressProps {
 pub fn progress(props: &ProgressProps) -> Html {
     let class = classes!("progress", &props.classes);
     let max = props.max.to_string();
-    let value = props.value.to_string();
-    let value_txt = format!("{}%", value);
+    //    let value = props.value.to_string();
+
+    let value = props.value.map(|v| v.to_string());
+
+    //    let value_txt = format!("{}%", value);
     html! {
-        <progress {class} {max} {value}>
-            {value_txt}
-        </progress>
-    }
+           <progress {class} {max} {value}>
+    //           {value_txt}
+           </progress>
+       }
 }
